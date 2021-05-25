@@ -9,7 +9,7 @@ My swarm mode was open. Firstly, I use below command.
 ```
 docker swarm leave --force
 ```
-Then try to 'docker-compose up' but getting this error. The solution was closing VPN in my case.
+Then try to 'docker-compose up' but getting this error. The solution was closing VPN in my case. After that 'docker-compose up' worked. 
 ```
 Creating network "docker-compose_default" with the default driver
 ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network 

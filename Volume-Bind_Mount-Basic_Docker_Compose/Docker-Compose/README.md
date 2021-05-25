@@ -6,11 +6,24 @@
 
 
 My swarm mode was open. Firstly, I use below command.
+```
 docker swarm leave --force
-
-Than try to 'docker-compose up' but getting this error. Solution was closing VPN in my case.
+```
+Then try to 'docker-compose up' but getting this error. The solution was closing VPN in my case.
+```
 Creating network "docker-compose_default" with the default driver
 ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network 
+```
 
-if you check the docker-compose file you can ask the what drupal is. Shortly, [Drupal](https://en.wikipedia.org/wiki/Drupal) is a free and open-source web content management framework written in PHP and distributed under the GNU General Public License. Also, our second image [PostgreSQL](https://www.postgresql.org), also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.
+if you check the docker-compose file you can ask what drupal is. Shortly, [Drupal](https://en.wikipedia.org/wiki/Drupal) is a free and open-source web content management framework written in PHP and distributed under the GNU General Public License. Also, our second image [PostgreSQL](https://www.postgresql.org), also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.
 
+Listing volumes
+```
+docker volume ls
+```
+Listing networks
+```
+docker network ls
+```
+Docker-compose is to create a new network on its own. When you use docker-compose down created network deleted automatically but volumes are not. You should use ```docker-compose down -v```
+for the deleting created volumes with docker-compose.
